@@ -23,7 +23,7 @@ i.e. download it from microsoft store
 ## Install python libraries
 go to terminal
 ```
-pip install transformers torch flask flask-cors
+pip install transformers torch flask flask-cors sentence-transformers 
 ```
 it might take awhile go grab a drink while it loads
 **ok setup done**
@@ -46,3 +46,6 @@ heres a format
     "response": "blablabla"}
 ]
 ```
+I also made a formatter: its in the 
+'use this to make a copy-pastable json' 
+folder. open the html on broswer
