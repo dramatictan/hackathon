@@ -41,8 +41,8 @@ now open index.html on browser to test the ai
 ### populate the dataset
 heres a format
 ```
-{
-    {"prompt": "blablabla"},
-    {"response": "blablabla"}
-}
+[
+    {"prompt": "blablabla",
+    "response": "blablabla"}
+]
 ```
