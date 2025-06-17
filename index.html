@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>ISP Chatbot</title></head>
+<body>
+  <h1>Integrated Shield Plan Chatbot</h1>
+  <input id="userInput" type="text" placeholder="Ask a question..." />
+  <button onclick="sendMessage()">Send</button>
+  <div id="responseBox"></div>
+
+  <script>
+    async function sendMessage() {
+      const input = document.getElementById("userInput").value;
+      const res = await fetch("http://localhost:5000/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt: input })
+      });
+      const data = await res.json();
+      document.getElementById("responseBox").innerText = data.response;
+    }
+  </script>
+</body>
+</html>
