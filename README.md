@@ -23,7 +23,7 @@ i.e. download it from microsoft store
 ## Install python libraries
 go to terminal
 ```
-pip install transformers torch flask flask-cors sentence-transformers 
+pip install transformers torch flask flask-cors sentence-transformers datasets
 ```
 it might take awhile go grab a drink while it loads
 **ok setup done**
