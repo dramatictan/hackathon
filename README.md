@@ -26,6 +26,7 @@ go to terminal
 pip install transformers torch flask flask-cors sentence-transformers datasets
 ```
 it might take awhile go grab a drink while it loads
+
 **ok setup done**
 
 ## running the project
@@ -36,6 +37,12 @@ python server.py
 this might also take awhile. or not.
 
 now open index.html on browser to test the ai
+
+### some notes
+wait for the server to finish loading before doing anything on the webpage
+once its done, it will show you a debugger pin. it will take awhile.
+
+gsm8k is a dataset for primary sch math qns in case u were wondering.
 
 # What we need to do now
 ### populate the dataset

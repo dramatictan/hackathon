@@ -21,7 +21,9 @@ def load_json(path):
         return json.load(f)
 
 # datasets
+# ours
 dataset1 = load_json("dataset/dataset.json")
+# primary sch maths
 dataset2 = load_json("dataset/gsm8k_converted.json")
 
 dataset = dataset1 + dataset2
