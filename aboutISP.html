@@ -19,6 +19,7 @@
 
     <link href="styles/styles.css" rel="stylesheet" />
     <link href = "styles/carousel.css" rel = "stylesheet"/>
+    <link href = "styles/aboutISP.css" rel = "stylesheet"/>
 
   </head>
 
@@ -53,40 +54,64 @@
       </div>
     </nav>
 
-  <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    </div>
+    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      </div>
 
-    <div class="carousel-inner">
-      <div class="carousel-item active c-item">
-        <img src="images/carousel-images/carousel-1.jpg" class="d-block w-100 c-img" alt="Slide 1">
-        <div class="carousel-caption top-0 mt-n5">
-          <p class="mt-5 fs-3 text-uppercase">Learn more about Integrated Shield Plan (ISP)</p>
-          <h1 class="display-4 fw-bolder text-capitalize">Try out our amazing chatbot</h1>
-          <a href="index.html" class="btn btn-primary px-4 py-2 fs-5 mt-5">Talk to Our Chatbot</a>
+      <div class="carousel-inner">
+        <div class="carousel-item active c-item">
+          <img src="images/carousel-images/carousel-1.jpg" class="d-block w-100 c-img" alt="Slide 1">
+          <div class="carousel-caption top-0 mt-n5">
+            <p class="mt-5 fs-3 text-uppercase">Learn more about Integrated Shield Plan (ISP)</p>
+            <h1 class="display-4 fw-bolder text-capitalize">Try out our amazing chatbot</h1>
+            <a href="index.html" class="btn btn-primary px-4 py-2 fs-5 mt-5">Talk to Our Chatbot</a>
+          </div>
+        </div>
+        <div class="carousel-item c-item">
+          <img src="images/carousel-images/carousel-2.jpeg" class="d-block w-100 c-img" alt="Slide 2">
+          <div class="carousel-caption top-0 mt-n5">
+            <p class="text-uppercase fs-3 mt-5">Understand the importance of Integrated Shield Plan</p>
+            <p class="display-6 fw-bolder text-capitalize">Providing you with additional coverage of medical insurance plan</p>
+            <a href="aboutISP.html" class="btn btn-primary px-4 py-2 fs-5 mt-5">Learn More</a>
+          </div>
         </div>
       </div>
-      <div class="carousel-item c-item">
-        <img src="images/carousel-images/carousel-2.jpeg" class="d-block w-100 c-img" alt="Slide 2">
-        <div class="carousel-caption top-0 mt-n5">
-          <p class="text-uppercase fs-3 mt-5">Understand the importance of Integrated Shield Plan</p>
-          <p class="display-6 fw-bolder text-capitalize">Providing you with additional coverage of medical insurance plan</p>
-          <a href="aboutISP.html" class="btn btn-primary px-4 py-2 fs-5 mt-5">Learn More</a>
+      <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="intro-box my-5">
+      <div class="row align-items-center">
+        <!-- Intro -->
+        <div class="col-md-6">
+          <h1>What is an Integrated Shield Plan (IP)?</h1>
+          <br>
+          <h5>
+              An <span>Integrated Shield Plan (IP)</span> is a private health insurance plan in Singapore that complements the basic coverage provided by <span>MediShield Life</span>. 
+              <br><br>
+              With an IP, you enjoy enhanced protection for hospitalisation, surgery, and certain outpatient treatments. IPs are offered by private insurers like Prudential and consist of two parts:
+              <ul>
+                  <li><strong><span>MediShield Life:</span></strong> The basic national health insurance for all Singaporeans and PRs.</li>
+                  <li><strong><span>Additional Private Insurance Coverage:</span></strong> Extra benefits such as higher claim limits, coverage for private hospitals, and pre- and post-hospitalisation treatments.</li>
+              </ul>
+          </h5>
+        </div>
+        <div class="col-md-6 text-end">
+          <div class="p-3 bg-white rounded-4 shadow " style="display:inline-block; border: 5px solid #f05050">
+                <img src = "images/aboutISP/image-1.jpg" alt="Integrated Shield Plan" class="img-fluid" style="max-width:450px;">
+          </div>
         </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-
+    
     <footer class="mt-auto py-3 bg-dark text-center">
       <p class="m-0 py-0 px-4">
         Created by Javier and Guan Ying for Fintech Hackathon (2025)

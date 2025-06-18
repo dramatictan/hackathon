@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from transformers import AutoTokenizer, AutoModelForQuestionAnswering
 from sentence_transformers import SentenceTransformer, util
@@ -6,26 +6,20 @@ import torch
 import json
 import re
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='.', static_url_path='')
 CORS(app)
 
-# model
+# model loading and dataset loading here...
 qa_model_name = "distilbert-base-uncased-distilled-squad"
 tokenizer = AutoTokenizer.from_pretrained(qa_model_name)
 model = AutoModelForQuestionAnswering.from_pretrained(qa_model_name)
-
 embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
 
 def load_json(path):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
-# datasets
-# ours
 dataset1 = load_json("dataset/dataset.json")
-# primary sch maths
-# dataset2 = load_json("dataset/gsm8k_converted.json")
-
 dataset = dataset1
 prompts = [entry["prompt"] for entry in dataset]
 prompt_embeddings = embedding_model.encode(prompts, convert_to_tensor=True)
@@ -37,26 +31,11 @@ def extract_math_expression(text):
     match = re.search(r"\d+(\s*[\+\-\*/]\s*\d+)+", text)
     return match.group(0) if match else None
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @app.route("/chat", methods=["POST"])
 def chat():
     user_input = request.json.get("prompt", "").strip()
     print("USER INPUT:", user_input)
 
-    # very very veeeeerry basic math
     math_expr = extract_math_expression(user_input)
     if math_expr and is_simple_math(math_expr):
         try:
@@ -64,16 +43,6 @@ def chat():
             return jsonify({"response": str(result)})
         except:
             pass
-
-
-
-
-
-
-
-
-
-
 
     exact_match = next(
         (item for item in dataset if item["prompt"].strip().lower() == user_input.lower()),
@@ -104,6 +73,9 @@ def chat():
 
     return jsonify({"response": reply})
 
+@app.route("/")
+def serve_index():
+    return send_from_directory(".", "index.html")
 
 if __name__ == "__main__":
-    app.run(port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
