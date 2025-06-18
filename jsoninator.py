@@ -1,12 +1,5 @@
-
-
-
-
-
 # this loads datasets and puts them in json format 
 # rmb to add the dataset to the model 
-
-
 
 from datasets import load_dataset
 import json

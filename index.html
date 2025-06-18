@@ -1,23 +1,80 @@
 <!DOCTYPE html>
-<html>
-<head><title>ISP Chatbot</title></head>
-<body>
-  <h1>write something</h1>
-  <input id="userInput" type="text" placeholder="Ask a question..." />
-  <button onclick="sendMessage()">Send</button>
-  <div id="responseBox"></div>
+<html lang = "en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISP Chatbot (PRUDENTIAL HACKATHON)</title>
 
-  <script>
-    async function sendMessage() {
-      const input = document.getElementById("userInput").value;
-      const res = await fetch("http://localhost:5000/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt: input })
-      });
-      const data = await res.json();
-      document.getElementById("responseBox").innerText = data.response;
-    }
-  </script>
-</body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+
+    <link href="styles/styles.css" rel="stylesheet" />
+
+  </head>
+
+  <body>
+    <!-- Navigation Bar-->
+    <nav class="navbar navbar-expand-lg bg-light mb-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Intellibank</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Chat</a>
+            </li>
+            <!-- Add new nav here -->
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="imgGen.html">Image Generator</a>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <h1 style = "margin-left: 10px;">Ask Anything with Intellibank</h1>
+    <input id="userInput" type="text" placeholder="Type your message..." />
+    <button onclick="sendMessage()">Send</button>
+
+    <div id="responseBox"></div>
+
+    <footer class="mt-auto py-3 bg-dark text-center">
+      <p class="m-0 py-0 px-4">
+        Created by Javier and Guan Ying for Fintech Hackathon (2025)
+      </p>
+    </footer> 
+
+    <script>
+      async function sendMessage() {
+        const input = document.getElementById("userInput").value;
+        const res = await fetch("http://localhost:5000/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ prompt: input })
+        });
+        const data = await res.json();
+        document.getElementById("responseBox").innerText = data.response;
+      }
+    </script>
+
+    <!-- Bootstrap -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"
+    ></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"
+    ></script>
+
+  </body>
 </html>

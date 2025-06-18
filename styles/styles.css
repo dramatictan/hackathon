@@ -1,0 +1,117 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+}
+
+html, body {
+    height: 100%;
+}
+
+#chat {
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+.user { color: blue; }
+.bot { color: green; }
+
+.nav-item {
+    padding-left: 0;
+}
+
+/* button */
+button {   
+    padding: 6px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+
+    width: 80px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+/* input field */
+input {
+    width: 600px;
+    padding: 6px 10px;
+    font-size: 16px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+}   
+
+/* chat */
+#chat {
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 250px;      /* smaller height */
+    width: 1510px;       /* set a smaller width */
+
+    overflow-y: auto;
+    background: #fff;   /* optional: white background */
+    border-radius: 8px; /* optional: rounded corners */
+
+    margin: 0 auto 10px 10px; /* center horizontally, spacing below */
+    font-size: 16px;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer p, footer ul, footer a {
+    color: #ffffff;
+    font-size: 0.875rem;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+footer ul li a:hover {
+    color: #ffd700; /* Gold color on hover */
+}
+
+footer .fab {
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+footer .fab:hover {
+    color: #ffd700; /* Gold color on hover */
+}
+
+footer .small {
+    font-size: 0.875rem;
+}
+
