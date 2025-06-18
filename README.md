@@ -1,52 +1,45 @@
-ctrl + shift + v to view
-
-
-
-
-
-
-
-
+Ctrl + Shift + v to view
 
 # DOCUMENTATION
-Heres how to set up this project after cloning the git repo
+Here is how to set up this project after cloning the git repos
 
 ## Install python
-go to ur terminal and type 
+Go to your terminal and type 
 ```
 python
 ```
-and follow instructions from there
+Follow instructions from there
 i.e. download it from microsoft store
 
 
 ## Install python libraries
-go to terminal
+Go to terminal
 ```
 pip install transformers torch flask flask-cors sentence-transformers datasets
 ```
-it might take awhile go grab a drink while it loads
+It might take awhile go grab a drink while it loads
 
-**ok setup done**
+**Ok setup done**
 
-## running the project
-terminal
+## Running the project
+Type this into the Terminal
 ```
 python server.py
 ```
-this might also take awhile. or not.
+This might also take awhile. or not.
 
-now open index.html on browser to test the ai
+Now open index.html on browser to test the AI
 
-### some notes
-wait for the server to finish loading before doing anything on the webpage
-once its done, it will show you a debugger pin. it will take awhile.
+### Some notes
+Wait for the server to finish loading before doing anything on the webpage
+Once its done, it will show you a debugger pin. it will take awhile.
 
+#### GSM8K Purpose
 gsm8k is a dataset for primary sch math qns in case u were wondering.
 
 # What we need to do now
 ### populate the dataset
-heres a format
+Here is a format
 ```
 [
     {"prompt": "blablabla",
