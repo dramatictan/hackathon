@@ -1,0 +1,33 @@
+@charset "utf-8";  /* need to work */
+
+.c-item {
+    height: 480px;
+}
+  
+.c-img {
+height: 700px;
+object-fit: cover;
+filter: brightness(0.6);
+}
+
+.carousel-item {
+    height: 90vh;
+}
+.carousel-item img {
+    height: 100%;
+    object-fit: cover; 
+}
+
+.carousel-caption {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
