@@ -20,7 +20,10 @@ def load_json(path):
         return json.load(f)
 
 dataset1 = load_json("dataset/dataset.json")
-dataset = dataset1
+dataset2 = load_json("dataset/basic-logic.json")
+dataset3 = load_json("dataset/basic-logic2.json")
+dataset4 = load_json("dataset/gsm8k_converted.json")
+dataset = dataset1 + dataset2 + dataset3 + dataset4
 prompts = [entry["prompt"] for entry in dataset]
 prompt_embeddings = embedding_model.encode(prompts, convert_to_tensor=True)
 
@@ -78,4 +81,4 @@ def serve_index():
     return send_from_directory(".", "index.html")
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=3000, debug=True)

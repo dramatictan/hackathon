@@ -28,7 +28,7 @@ python server.py
 ```
 This might also take awhile. or not.
 
-Now open index.html on http://localhost:5000 to test the AI
+Now open index.html on http://localhost:3000 to test the AI
 
 ### Some notes
 Wait for the server to finish loading before doing anything on the webpage

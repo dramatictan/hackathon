@@ -1,19 +1,20 @@
-# this loads datasets and puts them in json format 
-# rmb to add the dataset to the model 
-
 from datasets import load_dataset
 import json
+import os
 
-# Load the dataset (train split is usually enough for fine-tuning or embedding)
-dataset = load_dataset("openai/gsm8k", "main")["train"]
+os.makedirs("dataset", exist_ok=True)
 
-# View one sample
+# Load BoolQ train split explicitly
+dataset = load_dataset("google/boolq", split="train")
+
 converted = []
 for entry in dataset:
-    converted.append({"prompt": entry["question"],"response": entry["answer"]})
+    answer_text = "true" if entry["answer"] else "false"
+    converted.append({
+        "prompt": entry["question"],
+        "response": answer_text
+    })
 
-
-# Save it to a file
-with open("dataset/basic-maths.json", "w", encoding="utf-8") as f:
-    json.dump(dataset, f, indent=2)
-
+# Save converted to a JSON file
+with open("dataset/basic-logic2.json", "w", encoding="utf-8") as f:
+    json.dump(converted, f, indent=2)

@@ -29,7 +29,7 @@ function sendMessage() {
     appendMessage("user", input); // sender is user, input is the message 
     inputElem.value = ""; // Clear input box 
 
-    fetch("http://localhost:5000/chat", {
+    fetch("http://localhost:3000/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt: input }) // We send our input prompt to the AI backend
