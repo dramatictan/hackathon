@@ -1,7 +1,7 @@
 html, body {
     height: 100%;
     margin: 0;
-    padding: 0;
+    padding: 1%;
 }
 
 body {
@@ -49,11 +49,11 @@ input {
 #responseBox {
     border: 1px solid #ccc;
     padding: 10px;
-    height: 250px;      /* smaller height */
-    width: 1510px;       /* set a smaller width */
+    height: 50%;      /* smaller height */
+    width: 80%;       /* set a smaller width */
 
+    flex-wrap: wrap;
     overflow-y: auto;
-    background: #fff;   /* optional: white background */
     border-radius: 8px; /* optional: rounded corners */
 
     margin: 0 auto 10px 10px; /* center horizontally, spacing below */
@@ -78,8 +78,6 @@ input {
 
 /* Footer */
 footer {
-    background-color: #343a40;
-    color: #ffffff;
     padding: 2rem 0;
     text-align: center;
 }

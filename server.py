@@ -24,9 +24,9 @@ def load_json(path):
 # ours
 dataset1 = load_json("dataset/dataset.json")
 # primary sch maths
-dataset2 = load_json("dataset/gsm8k_converted.json")
+# dataset2 = load_json("dataset/gsm8k_converted.json")
 
-dataset = dataset1 + dataset2
+dataset = dataset1
 prompts = [entry["prompt"] for entry in dataset]
 prompt_embeddings = embedding_model.encode(prompts, convert_to_tensor=True)
 
