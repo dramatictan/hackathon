@@ -35,10 +35,10 @@
 
             <!-- Add navigation page -->
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">About Integrated Shield Plan</a>
+              <a class="nav-link active" aria-current="page" href="#">About Integrated Shield Plan</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Chat</a>
+              <a class="nav-link" aria-current="page" href="index.html">Chat</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#">Project Goals</a>
@@ -51,15 +51,6 @@
         </div>
       </div>
     </nav>
-
-    <h1 style = "margin-left: 10px;">Ask Anything with Intellibank</h1>
-
-    <!-- AI Message Output-->
-    <div id="responseBox"></div>
-
-    <!-- User Input -->
-    <input id="userInput" type="text" placeholder="Type your message..." />
-    <button onclick="sendMessage()">Send</button>
 
     <footer class="mt-auto py-3 bg-dark text-center">
       <p class="m-0 py-0 px-4">
@@ -79,9 +70,6 @@
         document.getElementById("responseBox").innerText = data.response;
       }
     </script>
-
-    <!-- JS SCRIPTS -->
-    <script src = "js/msgIdentify.js" defer></script>
 
     <!-- Bootstrap -->
     <script
