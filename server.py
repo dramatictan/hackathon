@@ -32,16 +32,20 @@ prompt_embeddings = embedding_model.encode(prompts, convert_to_tensor=True)
 # Intents and responses (sentiment + keyword) 
 intents = {
     "praise": {
-        "keywords": ["great", "excellent", "amazing", "love", "happy", "awesome"],
+        "keywords": ["great", "excellent", "amazing", "love", "happy", "awesome", "thank you"],
         "response": "Thank you so much! We're glad you're enjoying our website service for our hackathon!"
     },
     "confused": {
-        "keywords": ["don't understand", "confused", "how", "help", "explain"],
+        "keywords": ["don't understand", "confused", "how", "help", "explain", "huh", "?", "idk"],
         "response": "No worries, let me explain that more clearly for you."
     },
     "complaint": {
         "keywords": ["terrible", "bad", "worst", "disappointed", "angry", "useless", "slow"],
         "response": "I'm really sorry to hear that. We take your feedback seriously and will look into it immediately."
+    },
+    "hello": {
+        "keywords": ["hello", "good morning", "good afternoon", "hi", "how are you doing", "yo"],
+        "response": "Hello, hope you are doing fine! How can I help you today?"
     }
 }
 
