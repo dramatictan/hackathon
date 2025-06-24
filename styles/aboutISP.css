@@ -9,9 +9,10 @@
     margin-left: 0; /*align to the left*/
 }
 
-.intro-box h1 {
+.intro-box h1, h3 {
     color: #f05050;
 }
+
 
 .intro-box span {
     color: #f05050;
@@ -19,4 +20,33 @@
 
 .intro-box li {
     margin: 20px;
+}
+
+
+/* grid */
+.container-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(3, 1fr);  /* 3 rows, adjusts height to content */
+    gap: 20px;
+
+    margin-top: 30px;  /* add spacing below carousel */
+    position: relative; /* make sure it stacks normally */
+    z-index: 1;         /* ensures it's above default stacking context */
+}
+
+.item1 {
+    grid-row-start: 1;
+    grid-row-end: 2;  
+
+    grid-column-start: 1; 
+    grid-column-end: 3;       
+}
+
+.item2 {
+    grid-row-start: 1;
+    grid-row-end: 2;  
+
+    grid-column-start: 3;      
+    grid-column-end: 4;
 }
