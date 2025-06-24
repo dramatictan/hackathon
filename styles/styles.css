@@ -45,12 +45,18 @@ input {
     border: 1px solid #ccc;
 }   
 
+#userInput, button {
+  margin-top: 10px; /* adjust px value to your liking */
+  display: block;    /* ensures button goes on next line */
+}
+
+
 /* chat */
 #responseBox {
     border: 1px solid #ccc;
     padding: 10px;
-    height: 50%;      /* smaller height */
-    width: 80%;       /* set a smaller width */
+    height: 70%;      /* smaller height */
+    width: 100%;       /* set a smaller width */
 
     flex-wrap: wrap;
     overflow-y: auto;
@@ -75,6 +81,14 @@ input {
   display: flex;
   align-items: flex-start;
 }
+
+/* random questions */
+#suggestedButtons button {
+  display: block;
+  margin-bottom: 0.5rem;
+  width: 100%; /* Optional: make buttons full width */
+}
+
 
 /* Footer */
 footer {
