@@ -100,5 +100,18 @@
   {"prompt": "What happens if I switch jobs with an Integrated Shield Plan?", "response": "Your Integrated Shield Plan coverage continues independently of your employment."},
   {"prompt": "Are pre-existing mental health conditions covered?", "response": "Coverage depends on the insurer; some exclude or limit pre-existing psychiatric conditions."},
   {"prompt": "What is the effect of aging on Integrated Shield Plan premiums?", "response": "Premiums increase with age due to higher health risks and claim likelihood."},
-  {"prompt": "Can Integrated Shield Plans cover rehabilitation services?", "response": "Some plans cover inpatient rehabilitation as part of hospitalisation; outpatient rehab is less commonly covered."}
+
+  {"prompt": "Can Integrated Shield Plans cover rehabilitation services?", "response": "Some plans cover inpatient rehabilitation as part of hospitalisation; outpatient rehab is less commonly covered."},
+  {"prompt": "What is the difference between MediShield Life and Integrated Shield Plans?", "response": "MediShield Life is basic, government-run insurance covering Class B2/C wards. Integrated Shield Plans (IPs) add private insurance for better hospital rooms, specialist access, and faster treatment. IPs are optional but popular for more complete protection."},
+  {"prompt": "How do I compare Integrated Shield Plans in Singapore?", "repsonse": "You can compare plans based on hospital class coverage, premium costs, claim limits, panel networks, and rider options. Use comparison tools like MOH’s CompareFIRST or talk to a licensed advisor."},
+  {"prompt": "Which Integrated Shield Plan is best for private hospital coverage?", "response": "Plans like AIA Max VitalHealth A, PRUShield Premier, and Great Eastern Supreme Health P Plus offer private hospital coverage. Compare annual limits, panel access, and premiums."},
+  {"prompt": "Can you compare PRUShield and AIA Max Shield?", "response": "PRUShield Premier and AIA Max A both cover private hospitals, include riders to reduce out-of-pocket costs, and have panel doctor requirements. AIA typically offers more panel specialists, while PRUShield has stronger claims support."},
+  {"prompt": "Why do premiums increase with age?", "response": "As you age, the risk of hospitalisation increases. This means higher expected claims, leading to higher premiums for IPs and riders."},
+  {"prompt": "What are riders in Integrated Shield Plans?", "response": "Riders are optional add-ons to your main IP that reduce or cap your out-of-pocket costs like deductibles and co-insurance. All riders must now include at least 5% co-payment."},
+  {"prompt": "Are all riders the same across insurers?", "response": "No. Riders vary by insurer in terms of co-payment caps, panel doctor benefits, and pre-authorisation features."},
+  {"prompt": "How do I make a claim with my Integrated Shield Plan?", "response": "For hospital stays, most claims are filed automatically by the hospital through e-filing. You can track your claim via your insurer’s online portal."},
+  {"prompt": "Do Integrated Shield Plans cover cancer treatment?", "response": "Yes, most plans cover inpatient and outpatient cancer treatments like chemotherapy, subject to your plan’s limits and terms."},
+  {"prompt": "Are outpatient treatments covered under IPs?", "response": "Some are — especially if they’re pre- or post-hospitalisation. Outpatient general consultations or medication are usually not covered unless specified in a rider."},
+  {"prompt": "Do IPs cover psychiatric hospitalisation?", "response": "Yes, inpatient psychiatric treatment is often included, but coverage for outpatient mental health varies and is usually excluded unless through a rider."},
+  {"prompt": "What are typical exclusions in IPs?", "response": "Common exclusions include cosmetic surgery, experimental treatments, fertility procedures, and self-inflicted injuries."}
 ]
