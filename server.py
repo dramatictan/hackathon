@@ -6,6 +6,8 @@ import torch
 import json
 import re
 
+from textblob import TextBlob
+
 app = Flask(__name__, static_folder='.', static_url_path='')
 CORS(app)
 
@@ -26,6 +28,38 @@ dataset4 = load_json("dataset/gsm8k_converted.json")
 dataset = dataset1 + dataset2 + dataset3 + dataset4
 prompts = [entry["prompt"] for entry in dataset]
 prompt_embeddings = embedding_model.encode(prompts, convert_to_tensor=True)
+
+# Intents and responses (sentiment + keyword) 
+intents = {
+    "praise": {
+        "keywords": ["great", "excellent", "amazing", "love", "happy", "awesome"],
+        "response": "Thank you so much! We're glad you're enjoying our website service for our hackathon!"
+    },
+    "confused": {
+        "keywords": ["don't understand", "confused", "how", "help", "explain"],
+        "response": "No worries, let me explain that more clearly for you."
+    },
+    "complaint": {
+        "keywords": ["terrible", "bad", "worst", "disappointed", "angry", "useless", "slow"],
+        "response": "I'm really sorry to hear that. We take your feedback seriously and will look into it immediately."
+    }
+}
+
+# To process the words based on user' emotion score (sentiment)
+def get_intent_or_sentiment_response(message):
+    message = message.lower()
+    for intent_data in intents.values():
+        if any(word in message for word in intent_data["keywords"]):
+            return intent_data["response"]
+
+    sentiment = TextBlob(message).sentiment.polarity
+    if sentiment > 0.3:
+        return "That's great to hear!"
+    elif sentiment < -0.3:
+        return "I'm sorry to hear that. How can I assist further?"
+    else:
+        return None  # Return None if neutral sentiment, then proceed to the other output messages
+
 
 def is_simple_math(expr):
     return bool(re.fullmatch(r"[0-9+\-*/(). ]+", expr.strip()))
@@ -53,6 +87,12 @@ def chat():
     )
     if exact_match:
         return jsonify({"response": exact_match["response"]})
+
+    # Sentiment part
+    intent_response = get_intent_or_sentiment_response(user_input)
+    if intent_response:
+        return jsonify({"response": intent_response})
+    # else fallback to semantic QA
 
     input_embedding = embedding_model.encode(user_input, convert_to_tensor=True)
     hits = util.semantic_search(input_embedding, prompt_embeddings, top_k=1)[0]

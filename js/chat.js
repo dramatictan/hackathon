@@ -43,7 +43,21 @@ const prompts = [
     { prompt: "What is a panel doctor in an Integrated Shield Plan?"},
     { prompt: "Do Integrated Shield Plans cover cancer treatment?"},
     { prompt: "Can I claim for traditional Chinese medicine (TCM) under an Integrated Shield Plan?"},
-    { prompt: "What is the minimum age to be covered under an Integrated Shield Plan?"}
+    { prompt: "What is the minimum age to be covered under an Integrated Shield Plan?"},
+    { prompt : "Can elderly persons buy an Integrated Shield Plan?"},
+    { prompt : "What is the Lifetime Limit of Integrated Shield Plans?"},
+    { prompt : "How do I know which Integrated Shield Plan is best for me?"},
+    { prompt : "Can I buy an Integrated Shield Plan online?"},
+    { prompt : "Is surgery covered under Integrated Shield Plans?"},
+    { prompt : "Do Integrated Shield Plans have exclusions?"},
+    { prompt : "What does 'As Charged' mean in Integrated Shield Plans?"},
+    { prompt : "What is a co-payment cap in Integrated Shield Plan riders?"},
+    { prompt : "What is post-hospitalisation coverage?"},
+    { prompt : "What is pre-hospitalisation coverage?"},
+    { prompt : "Can I transfer my Integrated Shield Plan to another person?"},
+    { prompt : "Is there a grace period for paying Integrated Shield Plan premiums?"},
+    { prompt : "What is CPF Board’s role in Integrated Shield Plans?"},
+    { prompt : "Do I need to inform my insurer before hospital admission?"}
 ];
 
 // Function to randomly pick and show buttons
