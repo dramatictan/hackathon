@@ -34,7 +34,6 @@ const prompts = [
     { prompt: "What is an Integrated Shield Plan?"},
     { prompt: "How many authorized Integrated Shield Plan (ISP) providers are there in Singapore?"},
     { prompt: "What are the authorized Integrated Shield Plan (ISP) providers are there in Singapore?"},
-    { prompt: "What is an integrated shield plan?"},
     { prompt: "What is mediShield life?"},
     { prompt: "What is outpatient treatment?"},
     { prompt: "Can Integrated Shield Plans cover specialist consultations?"},

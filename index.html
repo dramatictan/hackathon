@@ -59,6 +59,10 @@
 
     <h6>Try asking these questions:</h6>
     <div id = "suggestedButtons" class = "d-flex flex-column gap 2 p-1"></div>
+    <div class = "d-flex justify-content-end"> <!-- justify-content-end means move to the end of page which is right -->
+      <!-- w-auto and h-auto means width and height is auto -->
+      <button onclick = "generateRandomButtons()" class = "btn btn-secondary btn-sm mt-2 w-auto h-auto" id = "refreshBtn">Refresh Questions 🔄</button>
+    </div>
 
     <!-- User Input -->
     <input id="userInput" type="text" class="bg-dark text-light" placeholder="Type your message..." />
