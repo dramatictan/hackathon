@@ -18,6 +18,7 @@
     />
 
     <link href="styles/styles.css" rel="stylesheet" />
+    <link href="styles/imgGen.css" rel="stylesheet"/>
 
   </head>
 
@@ -38,10 +39,10 @@
               <a class="nav-link text-light" aria-current="page" href="aboutISP.html">About Integrated Shield Plan</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="index.html">Chat</a>
+              <a class="nav-link text-light" aria-current="page" href="index.html">Chat</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" aria-current="page" href="imgGen.html">Financial Image Generation</a>
+              <a class="nav-link active text-light" aria-current="page" href="imgGen.html">Financial Image Generation</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-light" aria-current="page" href="#">Credit</a>
@@ -52,22 +53,20 @@
       </div>
     </nav>
 
-    <h1 style = "margin-left: 10px;">Ask Anything with Intellibank</h1>
-
-    <!-- AI Message Output-->
-    <div id="responseBox" class = "mt-3"></div>
-
-    <h6>Try asking these questions:</h6>
-    <div id = "suggestedButtons" class = "d-flex flex-column gap 2 p-1"></div>
-    <div class = "d-flex justify-content-end"> <!-- justify-content-end means move to the end of page which is right -->
-      <!-- w-auto and h-auto means width and height is auto -->
-      <button onclick = "generateRandomButtons()" class = "btn btn-secondary btn-sm mt-2 w-auto h-auto" id = "refreshBtn">Refresh Questions 🔄</button>
+    <h2 style = "margin-left: 10px;">Generate Your Immersive Financial Roadmap</h2>
+    <div id="imageBox" class="mx-auto my-3 w-auto h-auto">
+        <span>No image yet...</span>
     </div>
 
-    <!-- User Input -->
-    <div class = "d-flex gap-2 px-3 my-3">
-      <input id="userInput" type="text" class="bg-dark text-light" placeholder="Type your message..." />
-      <button onclick="sendMessage()">Send</button>
+    <div class = "userInputArea d-flex gap-2 px-3 my-3">
+        <!-- d-flex makes the container use flexbox layout.
+        flex-grow-1 tells the input to expand and fill available space.
+        gap-2 adds spacing between input and button.
+        px-3 my-3 adds horizontal and vertical spacing to the container.
+        form-control ensures proper input styling in Bootstrap. -->
+
+        <input type="text" id="messageInput" class="bg-dark text-light" placeholder="What would you like to see?" />
+        <button class = "px-2" onclick="generateImages()">Generate</button>
     </div>
 
     <footer class="mt-auto py-3 bg-dark text-center">
@@ -76,17 +75,29 @@
       </p>
     </footer> 
 
+    <script src="https://js.puter.com/v2/"></script>
     <script>
-      async function sendMessage() {
-        const input = document.getElementById("userInput").value;
-        const res = await fetch("http://localhost:3000/chat", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ prompt: input })
-        });
-        const data = await res.json();
-        document.getElementById("responseBox").innerText = data.response;
-      }
+        function generateImages() {
+            const input = document.getElementById('messageInput'); // Get the input field
+            const imageBox = document.getElementById('imageBox'); // Get the image box
+            const userText = input.value.trim(); // Get the user input and trim whitespace
+
+            if (userText === '') return;
+
+            // Show loading spinner
+            imageBox.innerHTML = '<div class="d-flex justify-content-center my-3"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+
+            // Call puter AI (use txt2img for consistency with your test file)
+            puter.ai.txt2img(userText) // Based on userText, generate an image
+                .then(imageElement => {
+                    imageBox.innerHTML = ''; // Clear previous content or empty before adding new image
+                    imageBox.appendChild(imageElement); // Append the generated image to the image box 
+                })
+                .catch(error => {
+                    imageBox.innerHTML = '<div class="text-danger">Error generating gays.</div>';
+                    console.error('Error generating image:', error);
+                });
+        }
     </script>
 
     <!-- Bootstrap -->
@@ -101,6 +112,7 @@
         crossorigin="anonymous"
     ></script>
 
+    <script src = "js/imgGen.js" defer></script>
     <script src = "js/chat.js" defer></script>
 
   </body>

@@ -1,0 +1,20 @@
+/*
+#imageBox {
+  width: 1000px;
+  height: 1000px;
+  border: 2px solid aliceblue; 
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.02); 
+  color: #aaa;
+  font-style: italic;
+}
+*/
+
+.userInputArea {
+    position: relative;
+    top: 50px;
+}
