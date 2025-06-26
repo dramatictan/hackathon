@@ -94,8 +94,19 @@
                     imageBox.appendChild(imageElement); // Append the generated image to the image box 
                 })
                 .catch(error => {
-                    imageBox.innerHTML = '<div class="text-danger">Error generating images.</div>';
-                    console.error('Error generating image:', error);
+                    imageBox.innerHTML = `<div class="text-danger">Error generating image. See console for details.</div>`;
+                    console.error('❌ Full Error:', error);
+
+                    // Optional: If the error is a Response object or custom object
+                    if (error instanceof Error) {
+                        console.error('Message:', error.message);
+                    } else {
+                        try {
+                            console.log('Stringified error:', JSON.stringify(error));
+                        } catch (e) {
+                            console.log('Unable to stringify error');
+                        }
+                    }
                 });
         }
     </script>
@@ -113,7 +124,6 @@
     ></script>
 
     <script src = "js/imgGen.js" defer></script>
-    <script src = "js/chat.js" defer></script>
 
   </body>
 </html>
