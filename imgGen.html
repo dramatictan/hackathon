@@ -88,6 +88,10 @@
             imageBox.innerHTML = '<div class="d-flex justify-content-center my-3"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>';
 
             // Call puter AI (use txt2img for consistency with your test file)
+
+            // Recontexting of userText to fit finance immersive roadmap
+            userText = userText + "financial roadmap for Integrated Shield Plan in Singapore, professional, clear infographic style";
+
             puter.ai.txt2img(userText) // Based on userText, generate an image
                 .then(imageElement => {
                     imageBox.innerHTML = ''; // Clear previous content or empty before adding new image
@@ -127,3 +131,27 @@
 
   </body>
 </html>
+
+
+<!--
+Note:
+
+Complex Product
+ISPs can be confusing, with multiple plan options, riders, premiums, exclusions, and claims processes. A financial roadmap can simplify these complexities for customers.
+
+Customer Empowerment
+Helping customers visualize their insurance coverage, costs, and benefits over time empowers them to make better-informed decisions. This reduces uncertainty and builds trust.
+
+Differentiation & Value-add
+Prudential could stand out by offering a personalized, AI-driven roadmap as a value-added service, improving customer experience and satisfaction.
+
+Regulatory Compliance
+Presenting accurate, easy-to-understand information aligns with regulatory pushes for transparency in financial products.
+
+Cross-selling & Up-selling
+A roadmap can highlight gaps or opportunities in coverage, creating openings for targeted product recommendations.
+
+Efficiency Gains
+Reduces customer service workload by answering common questions interactively and reducing the need for manual explanations.
+
+-->
