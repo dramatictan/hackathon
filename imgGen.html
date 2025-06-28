@@ -87,14 +87,14 @@
             // Show loading spinner
             imageBox.innerHTML = '<div class="d-flex justify-content-center my-3"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>';
 
-            // Add hidden context that enhances the AI generation prompt (adjust accordingly)
-            const context = "financial roadmap for Integrated Shield Plans in Singapore, infographic style, clear, professional, labeled, policy coverage steps";
+            // // Add hidden context that enhances the AI generation prompt (adjust accordingly)
+            // const context = "financial roadmap for Integrated Shield Plans in Singapore, infographic style, clear, professional, labeled, policy coverage steps";
 
-            // Combine user input with hidden context
-            const fullPrompt = userText + ". " + context;
+            // // Combine user input with hidden context
+            // const fullPrompt = userText + ". " + context;
 
             // Call puter AI (use txt2img for consistency with your test file)
-            puter.ai.txt2img(fullPrompt) // Based on userText, generate an image
+            puter.ai.txt2img(userText) // Based on userText, generate an image
                 .then(imageElement => {
                     imageBox.innerHTML = ''; // Clear previous content or empty before adding new image
                     imageBox.appendChild(imageElement); // Append the generated image to the image box 
@@ -155,5 +155,13 @@ A roadmap can highlight gaps or opportunities in coverage, creating openings for
 
 Efficiency Gains
 Reduces customer service workload by answering common questions interactively and reducing the need for manual explanations.
+
+-->
+
+
+<!--
+Possible Image Prompt:
+
+Hospital Care and Financial Planning Roadmap Graph
 
 -->
