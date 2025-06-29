@@ -51,11 +51,22 @@
     </nav>
 
     <h2 style = "margin-left: 10px;">Generate Your Immersive Financial Roadmap</h2>
-    <div id="imageBox" class="mx-auto my-3 w-auto h-auto">
-        <span>No image yet...</span>
-    </div>
+    <div class="imgContainer d-flex align-items-start px-3 my-3">
 
-    <div class = "userInputArea d-flex gap-2 px-3 my-3">
+      <div id="imageBox" class="my-3 ms-3">
+          <span class = "mx-auto my-3 w-auto h-auto">No image yet...</span>
+      </div>
+
+      <!-- Generate random prompt for IMG GEN -->
+      <div class="randomImgGenQns px-3">
+        <h6>Try asking these questions:</h6>
+        <div id = "suggestedButtons" class = "d-flex flex-column gap-2"></div>
+        <div class = "d-flex justify-content-end"> <!-- justify-content-end means move to the end of page which is right -->
+          <!-- w-auto and h-auto means width and height is auto -->
+          <button onclick = "generateRandomImgPrompt()" class = "btn btn-secondary btn-sm mt-2 w-auto h-auto" id = "refreshBtn">Refresh Prompt 🔄</button>
+        </div>
+
+        <div class = "userInputArea d-flex gap-2 px-3 my-3">
         <!-- d-flex makes the container use flexbox layout.
         flex-grow-1 tells the input to expand and fill available space.
         gap-2 adds spacing between input and button.
@@ -63,16 +74,9 @@
         form-control ensures proper input styling in Bootstrap. -->
 
         <input type="text" id="messageInput" class="bg-dark text-light" placeholder="What would you like to see?" />
-        <button class = "px-2" onclick="generateImages()">Generate</button>
-    </div>
+        <button class = "imgGenBtn px-2" onclick="generateImages()">Generate</button>
 
-    <!-- Generate random prompt for IMG GEN -->
-    <div class="randomImgGenQns px-3">
-      <h6>Try asking these questions:</h6>
-      <div id = "suggestedButtons" class = "d-flex flex-column gap-2 p-1"></div>
-      <div class = "d-flex justify-content-end"> <!-- justify-content-end means move to the end of page which is right -->
-        <!-- w-auto and h-auto means width and height is auto -->
-        <button onclick = "generateRandomImgPrompt()" class = "btn btn-secondary btn-sm mt-2 w-auto h-auto" id = "refreshBtn">Refresh Prompt 🔄</button>
+    </div>
       </div>
     </div>
 
@@ -92,16 +96,22 @@
             if (userText === '') return;
 
             // Show loading spinner
-            imageBox.innerHTML = '<div class="d-flex justify-content-center my-3"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+            imageBox.innerHTML = '<div class="mx-auto my-3 w-auto h-auto"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>';
 
             // Call puter AI (use txt2img for consistency with your test file)
             puter.ai.txt2img(userText) // Based on userText, generate an image
                 .then(imageElement => {
                     imageBox.innerHTML = ''; // Clear previous content or empty before adding new image
+
+                    // keep image within box and responsive
+                    imageElement.style.width = "100%";
+                    imageElement.style.height = "auto";
+                    imageElement.style.borderRadius = "6px";
+
                     imageBox.appendChild(imageElement); // Append the generated image to the image box 
                 })
                 .catch(error => {
-                    imageBox.innerHTML = `<div class="text-danger">Error generating image. See console for details.</div>`;
+                    imageBox.innerHTML = `<div class="text-danger mx-auto my-3 w-auto h-auto">Possible insufficent funds for image generation. See console for details.</div>`;
                     console.error('❌ Full Error:', error);
 
                     // Optional: If the error is a Response object or custom object
