@@ -69,6 +69,16 @@
         <button class = "px-2" onclick="generateImages()">Generate</button>
     </div>
 
+    <!-- Generate random prompt for IMG GEN -->
+    <div class="randomImgGenQns px-3">
+      <h6>Try asking these questions:</h6>
+      <div id = "suggestedButtons" class = "d-flex flex-column gap-2 p-1"></div>
+      <div class = "d-flex justify-content-end"> <!-- justify-content-end means move to the end of page which is right -->
+        <!-- w-auto and h-auto means width and height is auto -->
+        <button onclick = "generateRandomImgPrompt()" class = "btn btn-secondary btn-sm mt-2 w-auto h-auto" id = "refreshBtn">Refresh Prompt 🔄</button>
+      </div>
+    </div>
+
     <footer class="mt-auto py-3 bg-dark text-center">
       <p class="m-0 py-0 px-4">
         Created by Javier and Guan Ying for Fintech Hackathon (2025)
@@ -86,12 +96,6 @@
 
             // Show loading spinner
             imageBox.innerHTML = '<div class="d-flex justify-content-center my-3"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>';
-
-            // // Add hidden context that enhances the AI generation prompt (adjust accordingly)
-            // const context = "financial roadmap for Integrated Shield Plans in Singapore, infographic style, clear, professional, labeled, policy coverage steps";
-
-            // // Combine user input with hidden context
-            // const fullPrompt = userText + ". " + context;
 
             // Call puter AI (use txt2img for consistency with your test file)
             puter.ai.txt2img(userText) // Based on userText, generate an image
@@ -137,6 +141,11 @@
 
 <!--
 Note:
+Problem Statement:
+How might we leverage on technology such as AI to provide
+comprehensive, easy to understand and accurate info on the various
+Integrated Shield Plans in SG so as to ensure adequate insurance
+coverage for man-in-the-street.
 
 Complex Product
 ISPs can be confusing, with multiple plan options, riders, premiums, exclusions, and claims processes. A financial roadmap can simplify these complexities for customers.
@@ -164,4 +173,13 @@ Possible Image Prompt:
 
 Hospital Care and Financial Planning Roadmap Graph
 
+A financial roadmap infographic showing key milestones in Integrated Shield Plans coverage
+
+An infographic comparing different Integrated Shield Plan providers in Singapore with icons, benefits, premiums, and exclusions
+
+A hospital bed with a shield symbol and a chart explaining cost coverage levels for government vs private hospitals
+
+Tablet with visual charts of insurance coverage for Singaporeans
+
+A step-by-step infographic titled 'How to choose your Integrated Shield Plan
 -->

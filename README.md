@@ -48,4 +48,4 @@ Here is a format
 ```
 I also made a formatter: its in the 
 'use this to make a copy-pastable json' 
-folder. open the html on broswer
+folder. open the html on browser
