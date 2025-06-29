@@ -51,19 +51,35 @@ input {
 }
 
 
-/* chat */
+/* Container holding chat and avatar side-by-side */
+.chatContainer {
+    display: flex;
+    gap: 20px;            /* space between box and avatar */
+}
+
+/* Chat message box */
 #responseBox {
     border: 1px solid #ccc;
     padding: 10px;
-    height: 70%;      /* smaller height */
-    width: 100%;       /* set a smaller width */
-
-    flex-wrap: wrap;
+    height: 180px;         /* adjust height as needed */
+    width: 75%;            /* reduce width to make space for avatar */
     overflow-y: auto;
-    border-radius: 8px; /* optional: rounded corners */
-
-    margin: 0 auto 10px 10px; /* center horizontally, spacing below */
+    border-radius: 8px;
     font-size: 16px;
+    background-color: #343a40; /* optional dark background */
+}
+
+/* Avatar styling */
+#chatbotAvatar {
+    width: 120px;          /* size of the avatar container */
+    text-align: center;
+}
+
+#chatbotAvatar img {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;     /* make it round if it's a face */
+    border: 2px solid #ccc;
 }
 
 .username {

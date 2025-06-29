@@ -29,7 +29,6 @@ const prompts = [
     { prompt: "What are typical exclusions in IPs?" },
     { prompt: "Can I view my Integrated Shield Plan online?" },
     { prompt: "Can AI help me choose the right Integrated Shield Plan?" },
-    { prompt: "I travel often. Can IPs cover overseas treatments?" },
     { prompt: "What should I consider before buying an Integrated Shield Plan?" },
     { prompt: "What is an Integrated Shield Plan?"},
     { prompt: "How many authorized Integrated Shield Plan (ISP) providers are there in Singapore?"},
