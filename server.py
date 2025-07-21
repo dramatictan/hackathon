@@ -6,6 +6,8 @@ import torch
 import json
 import re
 
+import os
+
 from textblob import TextBlob
 
 app = Flask(__name__, static_folder='.', static_url_path='')
@@ -125,4 +127,5 @@ def serve_index():
     return send_from_directory(".", "index.html")
 
 if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 3000))1
     app.run(host="0.0.0.0", port=3000, debug=True)
