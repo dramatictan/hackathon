@@ -39,7 +39,7 @@ gsm8k is a dataset for primary sch math qns in case u were wondering.
 
 # What we need to do now
 ### populate the dataset
-Here is a format
+Here is the format
 ```
 [
     {"prompt": "blablabla",
